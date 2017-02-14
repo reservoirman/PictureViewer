@@ -14,6 +14,8 @@
 		F290AAE21E45790A0085F3F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F290AAE01E45790A0085F3F8 /* LaunchScreen.storyboard */; };
 		F290AAED1E45790A0085F3F8 /* Homework1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAEC1E45790A0085F3F8 /* Homework1Tests.swift */; };
 		F290AAF81E45790A0085F3F8 /* Homework1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAF71E45790A0085F3F8 /* Homework1UITests.swift */; };
+		F2C3E67F1E517365003F73E7 /* PictureStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3E67E1E517365003F73E7 /* PictureStruct.swift */; };
+		F2C3E6831E517EA8003F73E7 /* PictureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3E6821E517EA8003F73E7 /* PictureList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F290AAF31E45790A0085F3F8 /* Homework1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F290AAF71E45790A0085F3F8 /* Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework1UITests.swift; sourceTree = "<group>"; };
 		F290AAF91E45790A0085F3F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2C3E67E1E517365003F73E7 /* PictureStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureStruct.swift; sourceTree = "<group>"; };
+		F2C3E6821E517EA8003F73E7 /* PictureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureList.swift; path = ../PictureList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		F290AAD61E45790A0085F3F8 /* Homework1 */ = {
 			isa = PBXGroup;
 			children = (
+				F2C3E6821E517EA8003F73E7 /* PictureList.swift */,
 				F290AAD71E45790A0085F3F8 /* AppDelegate.swift */,
 				F290AAD91E45790A0085F3F8 /* ViewController.swift */,
 				F290AADB1E45790A0085F3F8 /* Main.storyboard */,
 				F290AADE1E45790A0085F3F8 /* Assets.xcassets */,
 				F290AAE01E45790A0085F3F8 /* LaunchScreen.storyboard */,
 				F290AAE31E45790A0085F3F8 /* Info.plist */,
+				F2C3E67E1E517365003F73E7 /* PictureStruct.swift */,
 			);
 			path = Homework1;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C3E6831E517EA8003F73E7 /* PictureList.swift in Sources */,
 				F290AADA1E45790A0085F3F8 /* ViewController.swift in Sources */,
+				F2C3E67F1E517365003F73E7 /* PictureStruct.swift in Sources */,
 				F290AAD81E45790A0085F3F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +513,7 @@
 				F290AAFE1E45790A0085F3F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F290AAFF1E45790A0085F3F8 /* Build configuration list for PBXNativeTarget "Homework1Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				F290AB011E45790A0085F3F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F290AB021E45790A0085F3F8 /* Build configuration list for PBXNativeTarget "Homework1UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				F290AB041E45790A0085F3F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
