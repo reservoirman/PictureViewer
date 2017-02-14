@@ -10,7 +10,7 @@ import UIKit
 
 class PictureList: NSObject {
 
-    var pictureList = [String]()
+    var pictureList = [PictureStruct]()
     
     func count() -> Int {
         return pictureList.count
@@ -58,11 +58,9 @@ class PictureList: NSObject {
         }
         
         
-        pictureList.append("Welcome")
-        pictureList.append("My name")
-        //pictureList.append(PictureStruct(views: 0, title: "giraffe", fileName: "giraffe.jpg", lastAccessed: Date.init(), imageSize: 144))
+        pictureList.append(PictureStruct(views: 0, title: "giraffe", fileName: "giraffe.jpg", lastAccessed: Date.init(), imageSize: 144))
         
-        //pictureList.append(PictureStruct(views: 0, title: "sunset", fileName: "sunset.jpg", lastAccessed: Date.init(), imageSize: 178))
+        pictureList.append(PictureStruct(views: 0, title: "sunset", fileName: "sunset.jpg", lastAccessed: Date.init(), imageSize: 178))
         
     }
 }

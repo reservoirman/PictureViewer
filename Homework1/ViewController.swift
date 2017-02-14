@@ -23,12 +23,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Title " + String(row)
+        return thePicList.pictureList[row].title
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        picTitle.text = thePicList.pictureList[row]//.title
+        picTitle.text = thePicList.pictureList[row].title
     }
     
     
