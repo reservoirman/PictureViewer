@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var picTitle: UILabel!
     
+    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet var thePicList: PictureList!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

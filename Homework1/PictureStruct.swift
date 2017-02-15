@@ -15,7 +15,7 @@ class PictureStruct: NSObject {
     var lastAccessed : Date?
     var imageSize : Int = 0     //in kilobytes
  
-    init(views: Int, title : String, fileName : String, lastAccessed : Date, imageSize : Int)
+    init(views: Int, title : String, fileName : String, lastAccessed : Date?, imageSize : Int)
     {
         self.numViews = views
         self.title = title

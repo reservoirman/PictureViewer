@@ -57,10 +57,15 @@ class PictureList: NSObject {
             print(error.localizedDescription)
         }
         
-        
+        //pictureList.append("welcome")
+        //pictureList.append("to the jungle")
+
         pictureList.append(PictureStruct(views: 0, title: "giraffe", fileName: "giraffe.jpg", lastAccessed: Date.init(), imageSize: 144))
         
         pictureList.append(PictureStruct(views: 0, title: "sunset", fileName: "sunset.jpg", lastAccessed: Date.init(), imageSize: 178))
+        
+        pictureList.append(PictureStruct(views: 0, title: "ice cream", fileName: "ice cream.jpg", lastAccessed: Date.init(), imageSize: 178))
+        
         
     }
 }
