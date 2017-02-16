@@ -32,11 +32,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let thisPicture : PictureStruct = thePicList.pictureList[indexPath.row]
-        let alert : UIAlertController = UIAlertController.init(title: thisPicture.fileName, message: thisPicture.title, preferredStyle: UIAlertControllerStyle.actionSheet)
-        alert.show(self, sender: self)
+        print(indexPath.row)
+        
+        performSegue(withIdentifier: "PictureController", sender: self)
+        
         tableView.deselectRow(at: indexPath, animated: true)
+
+        
     }
+    
+    
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,6 +69,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Picture Viewer!"
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
