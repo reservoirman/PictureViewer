@@ -31,6 +31,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return thePicList.count()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PictureController"
+        {
+            if let indexPath = tableView.indexPathForSelectedRow, let picture = thePicList.pictureList[indexPath.row] as PictureStruct?  {
+                //let destinationViewController = segue.destination as! PictureController(picture)
+                //print(picture.fileName)
+
+            }
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         

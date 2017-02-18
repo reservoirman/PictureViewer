@@ -21,15 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp8-cL-Bxs">
-                                <rect key="frame" x="108" y="46" width="158" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-73-mRE">
-                                <rect key="frame" x="67" y="133" width="240" height="160"/>
+                                <rect key="frame" x="67" y="133" width="240" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -42,7 +35,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xnw-De-n4x"/>
                     <connections>
-                        <outlet property="picTitle" destination="qp8-cL-Bxs" id="EnG-ua-7sy"/>
                         <outlet property="tableView" destination="yPe-73-mRE" id="mIz-h3-SQO"/>
                         <outlet property="thePicList" destination="Jfm-JL-MU7" id="2WF-MW-fqe"/>
                         <segue destination="U39-Fw-HEX" kind="show" identifier="PictureController" id="ufn-ym-sH2"/>
@@ -51,12 +43,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="Jfm-JL-MU7" customClass="PictureList" customModule="Homework1" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="834" y="38"/>
+            <point key="canvasLocation" x="832.79999999999995" y="37.331334332833585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w2n-0N-MdK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYk-pt-WZb" customClass="NavigationController" customModule="navigationController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bu-Wh-KdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYk-pt-WZb" customClass="NavigationController" customModule="Homework1" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tt6-Gh-pdQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -67,14 +60,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="L8X-IU-O8H"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bu-Wh-KdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120.8" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture Controller-->
         <scene sceneID="Uhi-VU-tpf">
             <objects>
-                <viewController id="U39-Fw-HEX" sceneMemberID="viewController">
+                <viewController id="U39-Fw-HEX" customClass="PictureController" customModule="Homework1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="leN-JY-ufP"/>
                         <viewControllerLayoutGuide type="bottom" id="OKi-Fh-qWX"/>
@@ -82,12 +74,32 @@
                     <view key="view" contentMode="scaleToFill" id="C73-MX-mt2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-w8-CuZ">
+                                <rect key="frame" x="0.0" y="72" width="375" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9ca-5k-gZD">
+                                <rect key="frame" x="67" y="315" width="240" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="picStruct" destination="0Fc-z1-6YE" id="d0B-3v-Lzp"/>
+                        <outlet property="pictureView" destination="mN8-w8-CuZ" id="8zE-iy-y9x"/>
+                        <outlet property="textView" destination="9ca-5k-gZD" id="dwq-tq-sIM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8t-mP-9UN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="0Fc-z1-6YE" customClass="PictureStruct" customModule="Homework1" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="833" y="743"/>
+            <point key="canvasLocation" x="832.79999999999995" y="742.5787106446777"/>
         </scene>
     </scenes>
 </document>
