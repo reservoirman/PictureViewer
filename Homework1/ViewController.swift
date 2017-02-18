@@ -34,12 +34,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureController"
         {
-            if let indexPath = tableView.indexPathForSelectedRow, let picture = thePicList.pictureList[indexPath.row] as PictureStruct?  {
-                //let destinationViewController = segue.destination as! PictureController(picture)
-                //print(picture.fileName)
-
+            let indexPath = tableView.indexPathForSelectedRow?.row
+            if let picStruct = thePicList.pictureList[indexPath!] as PictureStruct?
+            {
+                let correspondingPicController : PictureController = segue.destination as! PictureController
+                
+                correspondingPicController.picStruct = picStruct
             }
-            
         }
     }
     

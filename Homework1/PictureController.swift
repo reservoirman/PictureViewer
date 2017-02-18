@@ -29,18 +29,8 @@ class PictureController: UIViewController {
 
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
         
-        /*
-        let appDelegate = UIApplication.shared.delegate as! ViewController
-        picStruct = appDelegate.thePicList.pictureList[(index?.row)!]
-        
-        
-        if let name = picStruct.title as String? {
-            picTitle = name
-        }*/
-        
-        textView.text = "Welcome to the next level"//"Title: \(picStruct.title)\nFile Size:\(picStruct.imageSize)"
+        textView.text = "Title: \(picStruct.title)\nFile Size:\(picStruct.imageSize)"
         
 
         // Do any additional setup after loading the view.
