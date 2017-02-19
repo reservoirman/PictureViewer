@@ -14,11 +14,14 @@ class PictureStruct: NSObject {
     var fileName : String = ""
     var lastAccessed : Date?
     var imageSize : Int = 0     //in kilobytes
- 
+    var image : UIImage? = nil
+    
     override init()
     {
         
     }
+    
+
     
     init(views: Int, title : String, fileName : String, lastAccessed : Date?, imageSize : Int)
     {
@@ -27,5 +30,10 @@ class PictureStruct: NSObject {
         self.fileName = fileName
         self.lastAccessed = lastAccessed
         self.imageSize = imageSize
+        self.image = UIImage.init(named: self.fileName)
+        if self.image == nil
+        {
+            print("\(self.fileName) does not exist!" )
+        }
     }
 }

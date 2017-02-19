@@ -26,10 +26,38 @@ class PictureController: UIViewController {
         return self
     }
     
-
+    func resizeImage(image: UIImage) -> UIImage {
+        
+        let newWidth = pictureView.bounds.size.width
+        let newHeight = pictureView.bounds.size.height
+        
+        let widthRatio  = newWidth  / image.size.width
+        let heightRatio = newHeight / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: image.size.width * heightRatio, height: image.size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: image.size.width * widthRatio,  height: image.size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContext(newSize)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
     
     override func viewDidLoad() {
         
+        //pictureView.contentMode = UIViewContentMode.scaleAspectFit
+        
+        pictureView.image = resizeImage(image: picStruct.image!)
         textView.text = "Title: \(picStruct.title)\nFile Size:\(picStruct.imageSize)"
         
 

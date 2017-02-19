@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F21D16691E557563008F0EA2 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21D16681E557563008F0EA2 /* NavigationController.swift */; };
 		F24F3F171E557C93003B75CE /* PictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F3F161E557C93003B75CE /* PictureController.swift */; };
+		F24F3F2A1E594315003B75CE /* giraffe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F261E594315003B75CE /* giraffe.jpg */; };
+		F24F3F2B1E594315003B75CE /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F271E594315003B75CE /* earth.jpg */; };
+		F24F3F2C1E594315003B75CE /* ice cream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F281E594315003B75CE /* ice cream.jpg */; };
+		F24F3F2D1E594315003B75CE /* sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F291E594315003B75CE /* sunset.jpg */; };
 		F290AAD81E45790A0085F3F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAD71E45790A0085F3F8 /* AppDelegate.swift */; };
 		F290AADA1E45790A0085F3F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAD91E45790A0085F3F8 /* ViewController.swift */; };
 		F290AADD1E45790A0085F3F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F290AADB1E45790A0085F3F8 /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 /* Begin PBXFileReference section */
 		F21D16681E557563008F0EA2 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F24F3F161E557C93003B75CE /* PictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureController.swift; sourceTree = "<group>"; };
+		F24F3F261E594315003B75CE /* giraffe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = giraffe.jpg; sourceTree = "<group>"; };
+		F24F3F271E594315003B75CE /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
+		F24F3F281E594315003B75CE /* ice cream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice cream.jpg"; sourceTree = "<group>"; };
+		F24F3F291E594315003B75CE /* sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunset.jpg; sourceTree = "<group>"; };
 		F290AAD41E45790A0085F3F8 /* Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F290AAD71E45790A0085F3F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F290AAD91E45790A0085F3F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,10 @@
 		F290AAD61E45790A0085F3F8 /* Homework1 */ = {
 			isa = PBXGroup;
 			children = (
+				F24F3F261E594315003B75CE /* giraffe.jpg */,
+				F24F3F271E594315003B75CE /* earth.jpg */,
+				F24F3F281E594315003B75CE /* ice cream.jpg */,
+				F24F3F291E594315003B75CE /* sunset.jpg */,
 				F2C3E6821E517EA8003F73E7 /* PictureList.swift */,
 				F290AAD71E45790A0085F3F8 /* AppDelegate.swift */,
 				F290AAD91E45790A0085F3F8 /* ViewController.swift */,
@@ -246,6 +258,10 @@
 			files = (
 				F290AAE21E45790A0085F3F8 /* LaunchScreen.storyboard in Resources */,
 				F290AADF1E45790A0085F3F8 /* Assets.xcassets in Resources */,
+				F24F3F2B1E594315003B75CE /* earth.jpg in Resources */,
+				F24F3F2C1E594315003B75CE /* ice cream.jpg in Resources */,
+				F24F3F2A1E594315003B75CE /* giraffe.jpg in Resources */,
+				F24F3F2D1E594315003B75CE /* sunset.jpg in Resources */,
 				F290AADD1E45790A0085F3F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
