@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var picTitle: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,19 +22,67 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         }
-        let thisPicture : PictureStruct = thePicList.pictureList[indexPath.row]
-        cell!.textLabel?.text = thisPicture.title
+        if (indexPath.row == thePicList.count())
+        {
+            cell!.textLabel?.text = "Add new Picture..."
+            cell!.textLabel?.textColor = UIColor.blue
+            cell!.editingAccessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        }
+        else
+        {
+            let thisPicture : PictureStruct = thePicList.pictureList[indexPath.row]
+            cell!.textLabel?.text = thisPicture.title
+            cell!.textLabel?.textColor = UIColor.black
+            
+        }
         return cell!
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        tableView.setEditing(editing, animated: true)
+        tableView.reloadData()
+    }
+    
+    //need to overload this to change the icon for the row to add new pictures...
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if (indexPath.row == thePicList.count())
+        {
+            return UITableViewCellEditingStyle.insert
+        }
+        else
+        {
+            return UITableViewCellEditingStyle.delete
+        }
+    }
+    
+    //for deleting a row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete
+        {
+                thePicList.pictureList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.right)
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return thePicList.count()
+        if self.isEditing
+        {
+            return thePicList.count() + 1
+        }
+        else
+        {
+            return thePicList.count()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureController"
         {
             let indexPath = tableView.indexPathForSelectedRow?.row
+            print("So don't let me down \(indexPath)")
+
             if let picStruct = thePicList.pictureList[indexPath!] as PictureStruct?
             {
                 let correspondingPicController : PictureController = segue.destination as! PictureController
@@ -42,52 +90,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 correspondingPicController.picStruct = picStruct
             }
         }
+        else if segue.identifier == "AddPictureController"
+        {
+            let correspondingAddPicController : AddPictureController = segue.destination as! AddPictureController
+            correspondingAddPicController.thePicList = self.thePicList
+        }
     }
     
+    // action to take when selecting a row.  Either you will jump to the next page to display 
+    // the selected picture or you will add a new picture
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        performSegue(withIdentifier: "PictureController", sender: self)
+        if (indexPath.row != thePicList.count() && !self.isEditing)
+        {
+            performSegue(withIdentifier: "PictureController", sender: self)
+        }
+        else if (indexPath.row == thePicList.count() && self.isEditing)
+        {
+            performSegue(withIdentifier: "AddPictureController", sender: self)
+        } 
         
         tableView.deselectRow(at: indexPath, animated: true)
-
-        
     }
-    
-    
-
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return thePicList.pictureList.count
-    }
-
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return thePicList.pictureList[row].title
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        picTitle.text = thePicList.pictureList[row].title
-    }
-    
     
     //@IBOutlet weak var tableView: UITableView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Picture Viewer!"
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+        
+    func loadList(){
+        //load data here
+        self.tableView.reloadData()
+    }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

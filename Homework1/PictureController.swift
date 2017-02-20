@@ -12,6 +12,7 @@ class PictureController: UIViewController {
 
     var index : IndexPath? = []
     
+    @IBOutlet weak var pictureLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
     
     var picTitle : String? = ""
@@ -30,7 +31,7 @@ class PictureController: UIViewController {
         
         let newWidth = pictureView.bounds.size.width
         let newHeight = pictureView.bounds.size.height
-        
+        /*
         let widthRatio  = newWidth  / image.size.width
         let heightRatio = newHeight / image.size.height
         
@@ -41,9 +42,12 @@ class PictureController: UIViewController {
         } else {
             newSize = CGSize(width: image.size.width * widthRatio,  height: image.size.height * widthRatio)
         }
+        */
+        
+        let newSize = CGSize(width: newWidth, height: newHeight)
         
         // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        let rect = CGRect(x: 0, y: 0, width: newWidth, height: newHeight)
         
         UIGraphicsBeginImageContext(newSize)
         image.draw(in: rect)
@@ -58,8 +62,9 @@ class PictureController: UIViewController {
         //pictureView.contentMode = UIViewContentMode.scaleAspectFit
         
         pictureView.image = resizeImage(image: picStruct.image!)
-        textView.text = "Title: \(picStruct.title)\nFile Size:\(picStruct.imageSize)"
-        
+        textView.text = "Total views: \(picStruct.numViews)\nTitle: \(picStruct.title)\nLast Accessed: \(picStruct.lastAccessed!)\nFile Size:\(picStruct.imageSize) bytes"
+        pictureLabel.text = picStruct.title
+        pictureLabel.adjustsFontSizeToFitWidth = true
 
         // Do any additional setup after loading the view.
     }

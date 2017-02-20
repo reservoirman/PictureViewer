@@ -18,22 +18,26 @@ class PictureStruct: NSObject {
     
     override init()
     {
-        
+        self.image = UIImage.init(named: "sunset.jpg")
     }
     
 
     
-    init(views: Int, title : String, fileName : String, lastAccessed : Date?, imageSize : Int)
+    init(title : String, fileName : String)
     {
-        self.numViews = views
+        self.numViews = 0
         self.title = title
         self.fileName = fileName
-        self.lastAccessed = lastAccessed
-        self.imageSize = imageSize
+        self.lastAccessed = Date.init()
         self.image = UIImage.init(named: self.fileName)
         if self.image == nil
         {
             print("\(self.fileName) does not exist!" )
+        }
+        else
+        {
+            let jpegRep = UIImageJPEGRepresentation(self.image!, 1.0)
+            self.imageSize = (jpegRep?.count)!
         }
     }
 }
