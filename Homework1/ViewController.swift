@@ -86,7 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let picStruct = thePicList.pictureList[indexPath!] as PictureStruct?
             {
                 let correspondingPicController : PictureController = segue.destination as! PictureController
-                
+                picStruct.lastAccessed = Date.init().description
+                picStruct.numViews = picStruct.numViews + 1
                 correspondingPicController.picStruct = picStruct
             }
         }
@@ -119,6 +120,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.title = "Picture Viewer!"
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print(SQLITE_VERSION)
+        thePicList.copyToDocuments()
+        thePicList.populatePictureList()
     }
         
     func loadList(){

@@ -62,7 +62,7 @@ class PictureController: UIViewController {
         //pictureView.contentMode = UIViewContentMode.scaleAspectFit
         
         pictureView.image = resizeImage(image: picStruct.image!)
-        textView.text = "Total views: \(picStruct.numViews)\nTitle: \(picStruct.title)\nLast Accessed: \(picStruct.lastAccessed!)\nFile Size:\(picStruct.imageSize) bytes"
+        textView.text = "Total views: \(picStruct.numViews)\nTitle: \(picStruct.title)\nLast Accessed: \(picStruct.lastAccessed)\nFile Size:\(picStruct.imageSize) bytes"
         pictureLabel.text = picStruct.title
         pictureLabel.adjustsFontSizeToFitWidth = true
 

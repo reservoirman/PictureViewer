@@ -13,6 +13,9 @@
 		F24F3F2B1E594315003B75CE /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F271E594315003B75CE /* earth.jpg */; };
 		F24F3F2C1E594315003B75CE /* ice cream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F281E594315003B75CE /* ice cream.jpg */; };
 		F24F3F2D1E594315003B75CE /* sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24F3F291E594315003B75CE /* sunset.jpg */; };
+		F271FC7E1E5AA387007A306A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F271FC7D1E5AA387007A306A /* libsqlite3.tbd */; };
+		F271FC801E5AA8F1007A306A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F271FC7F1E5AA8F1007A306A /* libsqlite3.0.tbd */; };
+		F271FC841E5AD287007A306A /* pictures.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F271FC831E5AD287007A306A /* pictures.sqlite */; };
 		F290AAD81E45790A0085F3F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAD71E45790A0085F3F8 /* AppDelegate.swift */; };
 		F290AADA1E45790A0085F3F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290AAD91E45790A0085F3F8 /* ViewController.swift */; };
 		F290AADD1E45790A0085F3F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F290AADB1E45790A0085F3F8 /* Main.storyboard */; };
@@ -49,6 +52,10 @@
 		F24F3F271E594315003B75CE /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
 		F24F3F281E594315003B75CE /* ice cream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ice cream.jpg"; sourceTree = "<group>"; };
 		F24F3F291E594315003B75CE /* sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunset.jpg; sourceTree = "<group>"; };
+		F271FC7D1E5AA387007A306A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F271FC7F1E5AA8F1007A306A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F271FC811E5AAA73007A306A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F271FC831E5AD287007A306A /* pictures.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = pictures.sqlite; path = Homework1/pictures.sqlite; sourceTree = "<group>"; };
 		F290AAD41E45790A0085F3F8 /* Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F290AAD71E45790A0085F3F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F290AAD91E45790A0085F3F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F271FC801E5AA8F1007A306A /* libsqlite3.0.tbd in Frameworks */,
+				F271FC7E1E5AA387007A306A /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +101,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F271FC7C1E5AA387007A306A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F271FC7F1E5AA8F1007A306A /* libsqlite3.0.tbd */,
+				F271FC7D1E5AA387007A306A /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F290AACB1E45790A0085F3F8 = {
 			isa = PBXGroup;
 			children = (
+				F271FC831E5AD287007A306A /* pictures.sqlite */,
+				F271FC811E5AAA73007A306A /* Bridging-Header.h */,
 				F290AAD61E45790A0085F3F8 /* Homework1 */,
 				F290AAEB1E45790A0085F3F8 /* Homework1Tests */,
 				F290AAF61E45790A0085F3F8 /* Homework1UITests */,
 				F290AAD51E45790A0085F3F8 /* Products */,
+				F271FC7C1E5AA387007A306A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +286,7 @@
 				F24F3F2C1E594315003B75CE /* ice cream.jpg in Resources */,
 				F24F3F2A1E594315003B75CE /* giraffe.jpg in Resources */,
 				F24F3F2D1E594315003B75CE /* sunset.jpg in Resources */,
+				F271FC841E5AD287007A306A /* pictures.sqlite in Resources */,
 				F290AADD1E45790A0085F3F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,8 +472,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Homework1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lsqlite3";
+				"OTHER_LDFLAGS[arch=*]" = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = CSEE6998.Homework1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -462,8 +487,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Homework1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = CSEE6998.Homework1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

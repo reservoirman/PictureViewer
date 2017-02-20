@@ -34,7 +34,7 @@ class AddPictureController: UIViewController, UIImagePickerControllerDelegate, U
             let newPic = PictureStruct()
             newPic.title = self.textView!.text
             newPic.image = addedImage
-            newPic.lastAccessed = Date.init()
+            newPic.lastAccessed = Date.init().description
             thePicList.pictureList.append(newPic)
     
             //exit the Add Picture Screen and return to the list of pictures:
