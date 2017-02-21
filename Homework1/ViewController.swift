@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else
         {
-            let thisPicture : PictureStruct = thePicList.pictureList[indexPath.row]
+            let thisPicture : PictureStruct = thePicList.getPicStruct(index: indexPath.row)
             cell!.textLabel?.text = thisPicture.title
             cell!.textLabel?.textColor = UIColor.black
             
@@ -60,8 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-                thePicList.pictureList.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.right)
+            thePicList.deletePicture(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.right)
         }
     }
     
@@ -77,18 +77,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureController"
         {
             let indexPath = tableView.indexPathForSelectedRow?.row
             print("So don't let me down \(indexPath)")
 
-            if let picStruct = thePicList.pictureList[indexPath!] as PictureStruct?
+            if let picStruct = thePicList.getPicStruct(index: indexPath!) as PictureStruct?
             {
                 let correspondingPicController : PictureController = segue.destination as! PictureController
                 picStruct.lastAccessed = Date.init().description
                 picStruct.numViews = picStruct.numViews + 1
                 correspondingPicController.picStruct = picStruct
+                thePicList.updatePicture(picStruct: picStruct)
             }
         }
         else if segue.identifier == "AddPictureController"
@@ -114,6 +116,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     //@IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {

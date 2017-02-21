@@ -13,7 +13,7 @@ class PictureList: NSObject {
     var filePath : String = ""
     // open database
     var db: OpaquePointer? = nil
-    var pictureList = [PictureStruct]()
+    private var pictureList = [PictureStruct]()
     
     func count() -> Int {
         return pictureList.count
@@ -27,6 +27,11 @@ class PictureList: NSObject {
         //pictureList.append(PictureStruct(title: "The majestic sunset", fileName: "sunset.jpg"))
         
         //pictureList.append(PictureStruct(title: "The scrumptious ice cream", fileName: "ice cream.jpg"))
+    }
+    
+    func getPicStruct(index : Int) -> PictureStruct
+    {
+        return pictureList[index]
     }
     
     func copyToDocuments()
@@ -55,12 +60,14 @@ class PictureList: NSObject {
     
     }
     
+    //adds picture to both the database (via INSERT call)
+    //and the array (via append)
     func addPicture(picStruct : PictureStruct)
     {
         if sqlite3_open(filePath, &db) == SQLITE_OK
         {
             var insertStatement: OpaquePointer? = nil
-            let insertString = "INSERT INTO pictures(id, title, lastAccessed, views, image) VALUES (NULL, ?, ?, ?, ?)"
+            let insertString = "INSERT INTO pictures(id, title, lastAccessed, views, image) VALUES (NULL, ?, ?, 1, ?)"
             
             let result = sqlite3_prepare_v2(db, insertString, -1, &insertStatement, nil)
             if result == SQLITE_OK
@@ -71,15 +78,12 @@ class PictureList: NSObject {
                 //lastAccessed
                 sqlite3_bind_text(insertStatement, 2, (picStruct.lastAccessed as NSString).utf8String, -1, nil)
                 
-                //viewCount
-                sqlite3_bind_int(insertStatement, 3, Int32(picStruct.numViews))
-                
                 //image
                 let pictureData = UIImageJPEGRepresentation(picStruct.image!, 1.0)
                 let data = NSData(data: pictureData!)
                 let length = Int32(data.length)
                 
-                let returnValue = sqlite3_bind_blob(insertStatement, 4, data.bytes, length, nil)
+                let returnValue = sqlite3_bind_blob(insertStatement, 3, data.bytes, length, nil)
                 
                 print ("Return value = \(returnValue)")
                 if sqlite3_step(insertStatement) == SQLITE_DONE
@@ -92,14 +96,63 @@ class PictureList: NSObject {
         sqlite3_close_v2(db)
     }
     
+    //updates picture in the database (via UPDATE call)
     func updatePicture(picStruct : PictureStruct)
     {
-        
+        if sqlite3_open(filePath, &db) == SQLITE_OK
+        {
+            var updateStatement: OpaquePointer? = nil
+            let updateString = "UPDATE pictures SET title = ?, lastAccessed = ?, views =  ? WHERE id = ?;"
+            let result = sqlite3_prepare_v2(db, updateString, -1, &updateStatement, nil)
+            if result == SQLITE_OK
+            {
+                //title
+                sqlite3_bind_text(updateStatement, 1, (picStruct.title as NSString).utf8String, -1, nil)
+                
+                //lastAccessed
+                sqlite3_bind_text(updateStatement, 2, (picStruct.lastAccessed as NSString).utf8String, -1, nil)
+                
+                //viewcount
+                sqlite3_bind_int(updateStatement, 3, Int32(picStruct.numViews))
+                
+                
+                //primary key lookup
+                sqlite3_bind_int(updateStatement, 4, Int32(picStruct.id))
+                
+
+                if sqlite3_step(updateStatement) == SQLITE_DONE
+                {
+                    sqlite3_finalize(updateStatement)
+                }
+            }
+        }
+        sqlite3_close_v2(db)
     }
     
-    func deletePicture(picStruct : PictureStruct)
+    //deletes picture from database (via DELETE call)
+    //and the array (via remove)
+    func deletePicture(index : Int)
     {
-        
+        let picStruct = pictureList[index]
+        if sqlite3_open(filePath, &db) == SQLITE_OK
+        {
+            var deleteStatement: OpaquePointer? = nil
+            let deleteString = "DELETE FROM pictures WHERE id = ?;"
+            let result = sqlite3_prepare_v2(db, deleteString, -1, &deleteStatement, nil)
+            if result == SQLITE_OK
+            {
+                //primary key lookup
+                sqlite3_bind_int(deleteStatement, 1, Int32(picStruct.id))
+                
+                
+                if sqlite3_step(deleteStatement) == SQLITE_DONE
+                {
+                    sqlite3_finalize(deleteStatement)
+                    pictureList.remove(at: index)
+                }
+            }
+        }
+        sqlite3_close_v2(db)
     }
     
     func populatePictureList()

@@ -22,7 +22,7 @@ class PictureStruct: NSObject {
         self.image = UIImage.init(named: "sunset.jpg")
     }
     
-    
+    //set the size property of the picture object in bytes of the image
     func setSize()
     {
         var size = 0

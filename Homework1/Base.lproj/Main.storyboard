@@ -145,46 +145,44 @@
                                     <outlet property="delegate" destination="U39-Fw-HEX" id="1kr-ej-uhC"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NJ-fl-DMe">
-                                <rect key="frame" x="19" y="64" width="375" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="haB-dQ-bHt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3eG-5L-pWg">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3eG-5L-pWg">
                                 <rect key="frame" x="19" y="101" width="375" height="224"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-vW-p4L">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-vW-p4L">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-w8-CuZ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-w8-CuZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlS-Ff-JzW">
+                                <rect key="frame" x="20" y="64" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3NJ-fl-DMe" firstAttribute="trailing" secondItem="C73-MX-mt2" secondAttribute="trailingMargin" id="667-m8-PAt"/>
                             <constraint firstItem="3eG-5L-pWg" firstAttribute="top" secondItem="leN-JY-ufP" secondAttribute="bottom" constant="37" id="7lv-P3-eG8"/>
                             <constraint firstItem="OKi-Fh-qWX" firstAttribute="top" secondItem="9ca-5k-gZD" secondAttribute="bottom" constant="106" id="OVt-p0-mWr"/>
-                            <constraint firstItem="3NJ-fl-DMe" firstAttribute="leading" secondItem="3eG-5L-pWg" secondAttribute="leading" id="PkK-Tp-5Vh"/>
-                            <constraint firstItem="3NJ-fl-DMe" firstAttribute="top" secondItem="leN-JY-ufP" secondAttribute="bottom" id="Qnm-bd-g7e"/>
                             <constraint firstItem="9ca-5k-gZD" firstAttribute="leading" secondItem="C73-MX-mt2" secondAttribute="leadingMargin" constant="70" id="X4m-YZ-cgQ"/>
                             <constraint firstItem="9ca-5k-gZD" firstAttribute="centerX" secondItem="C73-MX-mt2" secondAttribute="centerX" id="Ydx-uU-cfn"/>
                             <constraint firstItem="3eG-5L-pWg" firstAttribute="centerX" secondItem="9ca-5k-gZD" secondAttribute="centerX" id="Zsf-ci-2wJ"/>
                             <constraint firstItem="OKi-Fh-qWX" firstAttribute="top" secondItem="3eG-5L-pWg" secondAttribute="bottom" constant="411" id="kos-H6-MGQ"/>
-                            <constraint firstItem="3NJ-fl-DMe" firstAttribute="trailing" secondItem="3eG-5L-pWg" secondAttribute="trailing" id="lYP-ME-eb6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="picStruct" destination="0Fc-z1-6YE" id="d0B-3v-Lzp"/>
-                        <outlet property="pictureLabel" destination="3NJ-fl-DMe" id="pCW-72-XDj"/>
+                        <outlet property="pictureTextField" destination="QlS-Ff-JzW" id="Dvd-6x-zZN"/>
                         <outlet property="pictureView" destination="mN8-w8-CuZ" id="8zE-iy-y9x"/>
                         <outlet property="textView" destination="9ca-5k-gZD" id="dwq-tq-sIM"/>
                     </connections>
@@ -192,7 +190,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8t-mP-9UN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="0Fc-z1-6YE" customClass="PictureStruct" customModule="Homework1" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="832" y="778"/>
+            <point key="canvasLocation" x="831.88405797101461" y="777.71739130434787"/>
         </scene>
     </scenes>
 </document>
