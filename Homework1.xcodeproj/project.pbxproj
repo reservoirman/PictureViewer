@@ -136,21 +136,21 @@
 		F290AAD61E45790A0085F3F8 /* Homework1 */ = {
 			isa = PBXGroup;
 			children = (
-				F24F3F261E594315003B75CE /* giraffe.jpg */,
 				F24F3F271E594315003B75CE /* earth.jpg */,
+				F24F3F261E594315003B75CE /* giraffe.jpg */,
 				F24F3F281E594315003B75CE /* ice cream.jpg */,
 				F24F3F291E594315003B75CE /* sunset.jpg */,
-				F2C3E6821E517EA8003F73E7 /* PictureList.swift */,
-				F290AAD71E45790A0085F3F8 /* AppDelegate.swift */,
-				F290AAD91E45790A0085F3F8 /* ViewController.swift */,
-				F290AADB1E45790A0085F3F8 /* Main.storyboard */,
-				F290AADE1E45790A0085F3F8 /* Assets.xcassets */,
-				F290AAE01E45790A0085F3F8 /* LaunchScreen.storyboard */,
 				F290AAE31E45790A0085F3F8 /* Info.plist */,
-				F2C3E67E1E517365003F73E7 /* PictureStruct.swift */,
+				F2FED7AC1E5A4CEE0072B103 /* AddPictureController.swift */,
+				F290AAD71E45790A0085F3F8 /* AppDelegate.swift */,
 				F21D16681E557563008F0EA2 /* NavigationController.swift */,
 				F24F3F161E557C93003B75CE /* PictureController.swift */,
-				F2FED7AC1E5A4CEE0072B103 /* AddPictureController.swift */,
+				F2C3E6821E517EA8003F73E7 /* PictureList.swift */,
+				F2C3E67E1E517365003F73E7 /* PictureStruct.swift */,
+				F290AAD91E45790A0085F3F8 /* ViewController.swift */,
+				F290AADE1E45790A0085F3F8 /* Assets.xcassets */,
+				F290AAE01E45790A0085F3F8 /* LaunchScreen.storyboard */,
+				F290AADB1E45790A0085F3F8 /* Main.storyboard */,
 			);
 			path = Homework1;
 			sourceTree = "<group>";

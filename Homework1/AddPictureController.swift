@@ -35,7 +35,9 @@ class AddPictureController: UIViewController, UIImagePickerControllerDelegate, U
             newPic.title = self.textView!.text
             newPic.image = addedImage
             newPic.lastAccessed = Date.init().description
-            thePicList.pictureList.append(newPic)
+            newPic.setSize()
+            thePicList.addPicture(picStruct: newPic)
+            //thePicList.pictureList.append(newPic)
     
             //exit the Add Picture Screen and return to the list of pictures:
             self.navigationController?.popViewController(animated: true)
